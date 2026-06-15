@@ -383,6 +383,34 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 .mobile-cta__btn--quote:active { background: var(--blue-dk); }
 
+/* ── LANGUAGE TOGGLE ── */
+.lang-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.lang-toggle__btn {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.45);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  min-height: 36px;
+}
+.lang-toggle__btn--active {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.4);
+  color: var(--white);
+}
+.lang-toggle__btn:active {
+  background: rgba(255,255,255,0.18);
+}
+
 /* ── HERO ── */
 .hero {
   background: var(--black);

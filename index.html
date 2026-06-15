@@ -9,6 +9,11 @@
   <meta name="description" content="Riverside CA web designer building sites that rank & convert. Basic, SEO, or Google Ads packages. Call Alex: 951-701-9764. Free quote.">
   <link rel="canonical" href="https://alexramirez.dev/">
 
+  <!-- Hreflang — bilingual single-URL (EN/ES JS toggle) -->
+  <link rel="alternate" hreflang="en" href="https://alexramirez.dev/">
+  <link rel="alternate" hreflang="es" href="https://alexramirez.dev/">
+  <link rel="alternate" hreflang="x-default" href="https://alexramirez.dev/">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alexramirez.dev/">
@@ -19,6 +24,7 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Alex Ramirez — Freelance Web Designer in Riverside, CA">
   <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_MX">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -63,7 +69,9 @@
       "Schema Markup",
       "Google Business Profile Management",
       "Citation Building",
-      "Riverside CA Small Business Marketing"
+      "Riverside CA Small Business Marketing",
+      "Bilingual Web Design Services",
+      "Spanish-Language Web Design"
     ],
     "address": {
       "@type": "PostalAddress",
@@ -212,16 +220,16 @@
   <header id="header" class="header header--transparent">
     <div class="container header__inner">
       <a href="/" class="header__logo" aria-label="Alex Ramirez — Home">
-        <span class="header__logo-name">Alex Ramirez</span>
+        <span class="header__logo-name" data-i18n="logo_name">Alex Ramirez</span>
         <span class="header__logo-dot" aria-hidden="true">·</span>
-        <span class="header__logo-loc">Riverside, CA</span>
+        <span class="header__logo-loc" data-i18n="logo_loc">Riverside, CA</span>
       </a>
       <nav id="nav" class="header__nav" aria-label="Main navigation">
-        <a href="#services" class="header__nav-link">Services</a>
-        <a href="#process" class="header__nav-link">How It Works</a>
-        <a href="#about" class="header__nav-link">About</a>
-        <a href="#faq" class="header__nav-link">FAQ</a>
-        <a href="#contact" class="btn btn--nav">Get a Free Quote</a>
+        <a href="#services" class="header__nav-link" data-i18n="nav_services">Services</a>
+        <a href="#process" class="header__nav-link" data-i18n="nav_process">How It Works</a>
+        <a href="#about" class="header__nav-link" data-i18n="nav_about">About</a>
+        <a href="#faq" class="header__nav-link" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" class="btn btn--nav" data-i18n="nav_cta">Get a Free Quote</a>
       </nav>
       <button id="menu-toggle" class="header__hamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -231,8 +239,8 @@
 
   <!-- MOBILE STICKY CTA -->
   <div id="mobile-cta-bar" class="mobile-cta" role="region" aria-label="Quick contact">
-    <a href="tel:+19517019764" class="mobile-cta__btn mobile-cta__btn--call">📞 Call Now</a>
-    <a href="#contact" class="mobile-cta__btn mobile-cta__btn--quote">Get a Free Quote</a>
+    <a href="tel:+19517019764" class="mobile-cta__btn mobile-cta__btn--call" data-i18n="mobile_call">📞 Call Now</a>
+    <a href="#contact" class="mobile-cta__btn mobile-cta__btn--quote" data-i18n="mobile_quote">Get a Free Quote</a>
   </div>
 
   <main>
@@ -241,43 +249,47 @@
     <section id="hero" class="hero">
       <div class="container hero__inner">
         <div class="hero__content">
-          <div class="hero__eyebrow">Freelance Web Designer · Riverside, CA</div>
-          <h1 class="hero__h1">Riverside's Freelance Web Designer — Sites Built to Rank, Not Just Look Good</h1>
-          <p class="hero__sub">From free basic websites to full SEO campaigns and Google Ads — I build online presences for local Riverside businesses that actually get found.</p>
+          <div class="lang-toggle">
+            <button class="lang-toggle__btn lang-toggle__btn--active" id="lang-en" onclick="setLanguage('en')" aria-label="Switch to English">🇺🇸 English</button>
+            <button class="lang-toggle__btn" id="lang-es" onclick="setLanguage('es')" aria-label="Cambiar a Español">🇲🇽 Español</button>
+          </div>
+          <div class="hero__eyebrow" data-i18n="hero_eyebrow">Freelance Web Designer · Riverside, CA</div>
+          <h1 class="hero__h1" data-i18n="hero_h1">Riverside's Freelance Web Designer — Sites Built to Rank, Not Just Look Good</h1>
+          <p class="hero__sub" data-i18n="hero_sub">From free basic websites to full SEO campaigns and Google Ads — I build online presences for local Riverside businesses that actually get found.</p>
           <div class="hero__trust">
-            <span>✓ No Agency Fees</span>
-            <span>✓ E-Contract Before Any Work</span>
-            <span>✓ Transparent Pricing</span>
-            <span>✓ Stripe Payments</span>
+            <span data-i18n="trust_1">✓ No Agency Fees</span>
+            <span data-i18n="trust_2">✓ E-Contract Before Any Work</span>
+            <span data-i18n="trust_3">✓ Transparent Pricing</span>
+            <span data-i18n="trust_4">✓ Stripe Payments</span>
           </div>
           <div class="hero__ctas">
-            <a href="tel:+19517019764" class="btn btn--primary">📞 Call 951-701-9764</a>
-            <a href="#services" class="btn btn--ghost">View Services ↓</a>
+            <a href="tel:+19517019764" class="btn btn--primary" data-i18n="hero_cta_call">📞 Call 951-701-9764</a>
+            <a href="#services" class="btn btn--ghost" data-i18n="hero_cta_services">View Services ↓</a>
           </div>
         </div>
 
         <div class="hero__card-wrap">
           <div class="hero__card">
-            <div class="hero__card-title">Get a Free Quote</div>
-            <div class="hero__card-sub">No obligation. Response same day.</div>
+            <div class="hero__card-title" data-i18n="hero_card_title">Get a Free Quote</div>
+            <div class="hero__card-sub" data-i18n="hero_card_sub">No obligation. Response same day.</div>
             <form class="inquiry-form" id="hero-form" novalidate>
               <input type="checkbox" name="botcheck" style="display:none;" aria-hidden="true">
               <div class="form-group">
                 <label for="hero-name" class="sr-only">Your Name</label>
-                <input class="form-input" id="hero-name" type="text" name="name" placeholder="Your Name" required autocomplete="name" aria-required="true">
+                <input class="form-input" id="hero-name" type="text" name="name" placeholder="Your Name" required autocomplete="name" aria-required="true" data-i18n-placeholder="form_name">
               </div>
               <div class="form-group">
                 <label for="hero-phone" class="sr-only">Phone Number</label>
-                <input class="form-input" id="hero-phone" type="tel" name="phone" placeholder="Phone Number" required autocomplete="tel" aria-required="true">
+                <input class="form-input" id="hero-phone" type="tel" name="phone" placeholder="Phone Number" required autocomplete="tel" aria-required="true" data-i18n-placeholder="form_phone">
               </div>
               <div class="form-group">
                 <label for="hero-email" class="sr-only">Email Address</label>
-                <input class="form-input" id="hero-email" type="email" name="email" placeholder="Email Address" required autocomplete="email" aria-required="true">
+                <input class="form-input" id="hero-email" type="email" name="email" placeholder="Email Address" required autocomplete="email" aria-required="true" data-i18n-placeholder="form_email">
               </div>
               <div class="form-group">
                 <label for="hero-service" class="sr-only">Service you need</label>
                 <select class="form-input form-select" id="hero-service" name="service" required aria-required="true">
-                  <option value="" disabled selected>What do you need?</option>
+                  <option value="" disabled selected data-i18n="form_service_default">What do you need?</option>
                   <option value="Basic Website — $250/mo">Basic Website — $250/mo</option>
                   <option value="SEO Website — $1,500 + $450/mo">SEO-Optimized Website — $1,500 + $450/mo</option>
                   <option value="Google Ads Management">Google Ads Management</option>
@@ -286,9 +298,9 @@
               </div>
               <div class="form-group">
                 <label for="hero-message" class="sr-only">Tell me about your business (optional)</label>
-                <textarea class="form-input form-textarea" id="hero-message" name="message" placeholder="Tell me about your business (optional)" rows="3"></textarea>
+                <textarea class="form-input form-textarea" id="hero-message" name="message" placeholder="Tell me about your business (optional)" rows="3" data-i18n-placeholder="form_message_hero"></textarea>
               </div>
-              <button type="submit" class="btn btn--submit">Send Quote Request →</button>
+              <button type="submit" class="btn btn--submit" data-i18n="form_submit">Send Quote Request →</button>
             </form>
           </div>
         </div>
@@ -298,80 +310,80 @@
     <!-- ── SERVICES ── -->
     <section id="services" class="services section-pad">
       <div class="container">
-        <div class="section-eyebrow">What I Offer</div>
-        <h2 class="section-h2">Web Design &amp; Google Ads Packages — Pick What Fits Your Budget</h2>
-        <p class="section-sub">Three clear options. No hidden fees. You know exactly what you're getting before any money moves.</p>
+        <div class="section-eyebrow" data-i18n="services_eyebrow">What I Offer</div>
+        <h2 class="section-h2" data-i18n="services_h2">Web Design &amp; Google Ads Packages — Pick What Fits Your Budget</h2>
+        <p class="section-sub" data-i18n="services_sub">Three clear options. No hidden fees. You know exactly what you're getting before any money moves.</p>
 
         <div class="services__grid">
 
           <!-- Basic -->
           <div class="service-card reveal">
             <div class="service-card__top">
-              <div class="service-card__tier">Starter</div>
-              <h3 class="service-card__name">Basic Website</h3>
+              <div class="service-card__tier" data-i18n="basic_tier">Starter</div>
+              <h3 class="service-card__name" data-i18n="basic_name">Basic Website</h3>
               <div class="service-card__pricing">
-                <span class="price-big">$0</span><span class="price-unit"> upfront</span>
-                <div class="price-monthly">then $250 / month</div>
+                <span class="price-big">$0</span><span class="price-unit" data-i18n="basic_unit"> upfront</span>
+                <div class="price-monthly" data-i18n="basic_monthly">then $250 / month</div>
               </div>
-              <p class="service-card__desc">A clean, professional website built at no upfront cost. You pay only for ongoing maintenance and hosting.</p>
+              <p class="service-card__desc" data-i18n="basic_desc">A clean, professional website built at no upfront cost. You pay only for ongoing maintenance and hosting.</p>
             </div>
             <ul class="service-card__features">
-              <li>Mobile-responsive design</li>
-              <li>Contact form included</li>
-              <li>Hosting &amp; deployment managed</li>
-              <li>Up to 2 revisions / month</li>
-              <li>Monthly site updates</li>
+              <li data-i18n="basic_f1">Mobile-responsive design</li>
+              <li data-i18n="basic_f2">Contact form included</li>
+              <li data-i18n="basic_f3">Hosting &amp; deployment managed</li>
+              <li data-i18n="basic_f4">Up to 2 revisions / month</li>
+              <li data-i18n="basic_f5">Monthly site updates</li>
             </ul>
-            <a href="#contact" class="btn btn--card">Get Started</a>
+            <a href="#contact" class="btn btn--card" data-i18n="card_cta">Get Started</a>
           </div>
 
           <!-- SEO — Featured -->
           <div class="service-card service-card--dark reveal">
-            <div class="service-card__badge">Most Popular</div>
+            <div class="service-card__badge" data-i18n="seo_badge">Most Popular</div>
             <div class="service-card__top">
-              <div class="service-card__tier service-card__tier--light">SEO Package</div>
-              <h3 class="service-card__name">SEO-Optimized Website</h3>
+              <div class="service-card__tier service-card__tier--light" data-i18n="seo_tier">SEO Package</div>
+              <h3 class="service-card__name" data-i18n="seo_name">SEO-Optimized Website</h3>
               <div class="service-card__pricing">
-                <span class="price-big">$1,500</span><span class="price-unit"> upfront</span>
-                <div class="price-monthly">then $450 / month</div>
+                <span class="price-big">$1,500</span><span class="price-unit" data-i18n="seo_unit"> upfront</span>
+                <div class="price-monthly" data-i18n="seo_monthly">then $450 / month</div>
               </div>
-              <p class="service-card__desc">Built from the ground up to rank on Google. This isn't just a website — it's a lead-generation machine for your local business.</p>
+              <p class="service-card__desc" data-i18n="seo_desc">Built from the ground up to rank on Google. This isn't just a website — it's a lead-generation machine for your local business.</p>
             </div>
             <ul class="service-card__features">
-              <li>Everything in Basic, plus:</li>
-              <li>Keyword research &amp; targeting</li>
-              <li>Schema.org structured data</li>
-              <li>Local citation building</li>
-              <li>Google Business Profile management</li>
-              <li>Monthly SEO updates</li>
-              <li>Backlink building</li>
-              <li>Monthly performance report</li>
-              <li><strong>Goal: Google top 10 in 12 months</strong></li>
+              <li data-i18n="seo_f1">Everything in Basic, plus:</li>
+              <li data-i18n="seo_f2">Keyword research &amp; targeting</li>
+              <li data-i18n="seo_f3">Schema.org structured data</li>
+              <li data-i18n="seo_f4">Local citation building</li>
+              <li data-i18n="seo_f5">Google Business Profile management</li>
+              <li data-i18n="seo_f6">Monthly SEO updates</li>
+              <li data-i18n="seo_f7">Backlink building</li>
+              <li data-i18n="seo_f8">Monthly performance report</li>
+              <li data-i18n="seo_f9"><strong>Goal: Google top 10 in 12 months</strong></li>
             </ul>
-            <a href="#contact" class="btn btn--card-light">Get Started</a>
+            <a href="#contact" class="btn btn--card-light" data-i18n="card_cta_light">Get Started</a>
           </div>
 
           <!-- Google Ads -->
           <div class="service-card reveal">
             <div class="service-card__top">
-              <div class="service-card__tier">Google Ads</div>
-              <h3 class="service-card__name">Ads Campaign Management</h3>
+              <div class="service-card__tier" data-i18n="ads_tier">Google Ads</div>
+              <h3 class="service-card__name" data-i18n="ads_name">Ads Campaign Management</h3>
               <div class="service-card__pricing">
-                <span class="price-big">$1,000</span><span class="price-unit"> min. spend</span>
-                <div class="price-monthly">weekly or monthly options</div>
+                <span class="price-big">$1,000</span><span class="price-unit" data-i18n="ads_unit"> min. spend</span>
+                <div class="price-monthly" data-i18n="ads_monthly">weekly or monthly options</div>
               </div>
-              <p class="service-card__desc">Show up at the top of Google immediately. No waiting for SEO. I set up and manage your entire campaign from start to finish.</p>
+              <p class="service-card__desc" data-i18n="ads_desc">Show up at the top of Google immediately. No waiting for SEO. I set up and manage your entire campaign from start to finish.</p>
             </div>
             <ul class="service-card__features">
-              <li>Full campaign setup &amp; targeting</li>
-              <li>Ad copy &amp; keyword strategy</li>
-              <li>Bid management &amp; optimization</li>
-              <li>Weekly performance reports</li>
-              <li>Weekly plan: $1,000 / week</li>
-              <li>Monthly plan: $1,000–$3,000 / mo</li>
+              <li data-i18n="ads_f1">Full campaign setup &amp; targeting</li>
+              <li data-i18n="ads_f2">Ad copy &amp; keyword strategy</li>
+              <li data-i18n="ads_f3">Bid management &amp; optimization</li>
+              <li data-i18n="ads_f4">Weekly performance reports</li>
+              <li data-i18n="ads_f5">Weekly plan: $1,000 / week</li>
+              <li data-i18n="ads_f6">Monthly plan: $1,000–$3,000 / mo</li>
             </ul>
-            <p class="service-card__note">Ad performance is determined by Google and your budget — not by me. I optimize every dollar, but Google controls placement.</p>
-            <a href="#contact" class="btn btn--card">Get Started</a>
+            <p class="service-card__note" data-i18n="ads_note">Ad performance is determined by Google and your budget — not by me. I optimize every dollar, but Google controls placement.</p>
+            <a href="#contact" class="btn btn--card" data-i18n="card_cta">Get Started</a>
           </div>
 
         </div>
@@ -381,37 +393,37 @@
     <!-- ── PROCESS ── -->
     <section id="process" class="process section-pad">
       <div class="container">
-        <div class="section-eyebrow">How It Works</div>
-        <h2 class="section-h2">How Alex Builds Sites That Show Up on Google</h2>
-        <p class="section-sub">Straightforward from start to finish. You know what's happening at every step before any money moves.</p>
+        <div class="section-eyebrow" data-i18n="process_eyebrow">How It Works</div>
+        <h2 class="section-h2" data-i18n="process_h2">How Alex Builds Sites That Show Up on Google</h2>
+        <p class="section-sub" data-i18n="process_sub">Straightforward from start to finish. You know what's happening at every step before any money moves.</p>
 
         <div class="process__steps">
           <div class="process__step reveal">
             <div class="process__num">01</div>
             <div class="process__body">
-              <h3 class="process__title">Free Consultation</h3>
-              <p class="process__desc">Call or text me at <a href="tel:+19517019764">951-701-9764</a>. We talk about your business, your goals, and your budget. No pressure, no sales pitch — just a straight conversation about what will actually work for you.</p>
+              <h3 class="process__title" data-i18n="step1_title">Free Consultation</h3>
+              <p class="process__desc" data-i18n="step1_desc">Call or text me at <a href="tel:+19517019764">951-701-9764</a>. We talk about your business, your goals, and your budget. No pressure, no sales pitch — just a straight conversation about what will actually work for you.</p>
             </div>
           </div>
           <div class="process__step reveal">
             <div class="process__num">02</div>
             <div class="process__body">
-              <h3 class="process__title">E-Contract Sent</h3>
-              <p class="process__desc">Before any money moves, you receive a clear digital contract laying out exactly what's being built, what it costs, and all policies. You review it, sign it digitally, and we move forward on your terms.</p>
+              <h3 class="process__title" data-i18n="step2_title">E-Contract Sent</h3>
+              <p class="process__desc" data-i18n="step2_desc">Before any money moves, you receive a clear digital contract laying out exactly what's being built, what it costs, and all policies. You review it, sign it digitally, and we move forward on your terms.</p>
             </div>
           </div>
           <div class="process__step reveal">
             <div class="process__num">03</div>
             <div class="process__body">
-              <h3 class="process__title">Stripe Invoice &amp; Payment</h3>
-              <p class="process__desc">Once the contract is signed, a secure Stripe invoice is sent to your email. Pay by credit card, debit card, or any major card brand — Visa, Mastercard, Amex, Discover, and more. Work begins the moment payment is recorded.</p>
+              <h3 class="process__title" data-i18n="step3_title">Stripe Invoice &amp; Payment</h3>
+              <p class="process__desc" data-i18n="step3_desc">Once the contract is signed, a secure Stripe invoice is sent to your email. Pay by credit card, debit card, or any major card brand — Visa, Mastercard, Amex, Discover, and more. Work begins the moment payment is recorded.</p>
             </div>
           </div>
           <div class="process__step reveal">
             <div class="process__num">04</div>
             <div class="process__body">
-              <h3 class="process__title">Build, Launch &amp; Rank</h3>
-              <p class="process__desc">Your site goes live. For SEO clients, ongoing monthly work starts immediately — citations, backlinks, content updates, GBP management — all compounding every month to push your rankings higher on Google.</p>
+              <h3 class="process__title" data-i18n="step4_title">Build, Launch &amp; Rank</h3>
+              <p class="process__desc" data-i18n="step4_desc">Your site goes live. For SEO clients, ongoing monthly work starts immediately — citations, backlinks, content updates, GBP management — all compounding every month to push your rankings higher on Google.</p>
             </div>
           </div>
         </div>
@@ -422,11 +434,11 @@
     <section id="about" class="about section-pad">
       <div class="container about__inner">
         <div class="about__text reveal-left">
-          <div class="section-eyebrow">Who You're Working With</div>
-          <h2 class="section-h2">About Alex Ramirez — Riverside's Independent Web Designer</h2>
-          <p>I'm a freelance web designer and digital marketer based in Riverside, California. I work directly with local business owners — no agency middleman, no junior staff passing your project around. When you work with me, you talk to me.</p>
-          <p>I specialize in building websites that don't just look good — they're engineered to rank on Google and turn visitors into leads. Whether you need an affordable website to get online or a full SEO campaign to dominate local search, I build it all from scratch, the right way.</p>
-          <p>I serve businesses across Riverside and the entire Inland Empire — Corona, Moreno Valley, Ontario, San Bernardino, Temecula, and beyond. If your customers are local, I can help them find you.</p>
+          <div class="section-eyebrow" data-i18n="about_eyebrow">Who You're Working With</div>
+          <h2 class="section-h2" data-i18n="about_h2">About Alex Ramirez — Riverside's Independent Web Designer</h2>
+          <p data-i18n="about_p1">I'm a freelance web designer and digital marketer based in Riverside, California. I work directly with local business owners — no agency middleman, no junior staff passing your project around. When you work with me, you talk to me.</p>
+          <p data-i18n="about_p2">I specialize in building websites that don't just look good — they're engineered to rank on Google and turn visitors into leads. Whether you need an affordable website to get online or a full SEO campaign to dominate local search, I build it all from scratch, the right way.</p>
+          <p data-i18n="about_p3">I serve businesses across Riverside and the entire Inland Empire — Corona, Moreno Valley, Ontario, San Bernardino, Temecula, and beyond. If your customers are local, I can help them find you.</p>
           <div class="about__contacts">
             <a href="tel:+19517019764" class="about__contact-item">
               <span class="about__contact-icon">📞</span>
@@ -446,19 +458,19 @@
           <div class="about__card">
             <div class="about__card-item">
               <div class="about__card-value">Direct</div>
-              <div class="about__card-label">You talk to Alex — not a rep</div>
+              <div class="about__card-label" data-i18n="about_card_label1">You talk to Alex — not a rep</div>
             </div>
             <div class="about__card-divider"></div>
             <div class="about__card-item">
               <div class="about__card-value">Local</div>
-              <div class="about__card-label">Based in Riverside, CA</div>
+              <div class="about__card-label" data-i18n="about_card_label2">Based in Riverside, CA</div>
             </div>
             <div class="about__card-divider"></div>
             <div class="about__card-item">
               <div class="about__card-value">IE</div>
-              <div class="about__card-label">Full Inland Empire coverage</div>
+              <div class="about__card-label" data-i18n="about_card_label3">Full Inland Empire coverage</div>
             </div>
-            <a href="tel:+19517019764" class="btn btn--primary btn--card-cta">Call or Text Alex</a>
+            <a href="tel:+19517019764" class="btn btn--primary btn--card-cta" data-i18n="about_card_cta">Call or Text Alex</a>
           </div>
         </div>
       </div>
@@ -467,80 +479,80 @@
     <!-- ── FAQ ── -->
     <section id="faq" class="faq section-pad">
       <div class="container">
-        <div class="section-eyebrow">FAQ</div>
-        <h2 class="section-h2">Frequently Asked Questions About Web Design &amp; SEO in Riverside</h2>
+        <div class="section-eyebrow" data-i18n="faq_eyebrow">FAQ</div>
+        <h2 class="section-h2" data-i18n="faq_h2">Frequently Asked Questions About Web Design &amp; SEO in Riverside</h2>
 
         <div class="faq__list">
 
           <div class="faq__item">
             <button class="faq__q" aria-expanded="false" aria-controls="faq-a-1">
-              <span>How much does a website cost?</span>
+              <span data-i18n="faq_q1">How much does a website cost?</span>
               <span class="faq__chevron" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </span>
             </button>
             <div class="faq__a" id="faq-a-1">
-              <p>It depends on what you need. Alex offers a Basic Website with no upfront build cost — you only pay $250 per month for maintenance and hosting. If you want a site built to rank on Google, the SEO-Optimized Website package is $1,500 upfront plus $450 per month. Both options are designed for Riverside small businesses that want results without agency-level pricing.</p>
+              <p data-i18n="faq_a1">It depends on what you need. Alex offers a Basic Website with no upfront build cost — you only pay $250 per month for maintenance and hosting. If you want a site built to rank on Google, the SEO-Optimized Website package is $1,500 upfront plus $450 per month. Both options are designed for Riverside small businesses that want results without agency-level pricing.</p>
             </div>
           </div>
 
           <div class="faq__item">
             <button class="faq__q" aria-expanded="false" aria-controls="faq-a-2">
-              <span>Do I need SEO?</span>
+              <span data-i18n="faq_q2">Do I need SEO?</span>
               <span class="faq__chevron" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </span>
             </button>
             <div class="faq__a" id="faq-a-2">
-              <p>If your customers search Google before they buy — and most do — then yes. A website without SEO is invisible. Alex works with businesses of all sizes, local and international. His SEO-Optimized Website package is built to rank in Google's top 10 for your specific target terms — whether you're a local shop or a business reaching customers nationwide or worldwide. Without it, your site may exist but won't be found by people actively looking for what you offer.</p>
+              <p data-i18n="faq_a2">If your customers search Google before they buy — and most do — then yes. A website without SEO is invisible. Alex works with businesses of all sizes, local and international. His SEO-Optimized Website package is built to rank in Google's top 10 for your specific target terms — whether you're a local shop or a business reaching customers nationwide or worldwide. Without it, your site may exist but won't be found by people actively looking for what you offer.</p>
             </div>
           </div>
 
           <div class="faq__item">
             <button class="faq__q" aria-expanded="false" aria-controls="faq-a-3">
-              <span>How long does SEO take to work?</span>
+              <span data-i18n="faq_q3">How long does SEO take to work?</span>
               <span class="faq__chevron" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </span>
             </button>
             <div class="faq__a" id="faq-a-3">
-              <p>Most local SEO campaigns start showing measurable movement in 60 to 90 days, with significant ranking gains visible by months four to six. Alex focuses on Riverside-specific local SEO, which tends to produce faster results than national campaigns because the competition pool is smaller and more targetable.</p>
+              <p data-i18n="faq_a3">Most local SEO campaigns start showing measurable movement in 60 to 90 days, with significant ranking gains visible by months four to six. Alex focuses on Riverside-specific local SEO, which tends to produce faster results than national campaigns because the competition pool is smaller and more targetable.</p>
             </div>
           </div>
 
           <div class="faq__item">
             <button class="faq__q" aria-expanded="false" aria-controls="faq-a-4">
-              <span>How do Google Ads work?</span>
+              <span data-i18n="faq_q4">How do Google Ads work?</span>
               <span class="faq__chevron" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </span>
             </button>
             <div class="faq__a" id="faq-a-4">
-              <p>Google Ads put your business at the top of search results immediately — no waiting for SEO. You pay per click, and Alex manages everything: campaign setup, keyword targeting, ad copy, bid management, and weekly reporting. The minimum ad spend is $1,000/month. Weekly option at $1,000/week, monthly at $1,000–$3,000/month. The more you spend, the higher Google places your ads — that's Google's system, not mine.</p>
+              <p data-i18n="faq_a4">Google Ads put your business at the top of search results immediately — no waiting for SEO. You pay per click, and Alex manages everything: campaign setup, keyword targeting, ad copy, bid management, and weekly reporting. The minimum ad spend is $1,000/month. Weekly option at $1,000/week, monthly at $1,000–$3,000/month. The more you spend, the higher Google places your ads — that's Google's system, not mine.</p>
             </div>
           </div>
 
           <div class="faq__item">
             <button class="faq__q" aria-expanded="false" aria-controls="faq-a-5">
-              <span>Where is Alex located and what areas does he serve?</span>
+              <span data-i18n="faq_q5">Where is Alex located and what areas does he serve?</span>
               <span class="faq__chevron" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </span>
             </button>
             <div class="faq__a" id="faq-a-5">
-              <p>Alex is based in Riverside, California but works with clients everywhere — local Inland Empire businesses, national brands, and international clients of any size. Web design and SEO are fully remote services. Reach him at <a href="tel:+19517019764">951-701-9764</a> or <a href="mailto:alexramirez24@gmail.com">alexramirez24@gmail.com</a>.</p>
+              <p data-i18n="faq_a5">Alex is based in Riverside, California but works with clients everywhere — local Inland Empire businesses, national brands, and international clients of any size. Web design and SEO are fully remote services. Reach him at <a href="tel:+19517019764">951-701-9764</a> or <a href="mailto:alexramirez24@gmail.com">alexramirez24@gmail.com</a>.</p>
             </div>
           </div>
 
           <div class="faq__item">
             <button class="faq__q" aria-expanded="false" aria-controls="faq-a-6">
-              <span>How do I get started?</span>
+              <span data-i18n="faq_q6">How do I get started?</span>
               <span class="faq__chevron" aria-hidden="true">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </span>
             </button>
             <div class="faq__a" id="faq-a-6">
-              <p>Call or text Alex at <a href="tel:+19517019764">951-701-9764</a> — that's the fastest way. You can also email <a href="mailto:alexramirez24@gmail.com">alexramirez24@gmail.com</a> or fill out the form on this page. He'll ask a few questions about your business and budget, then give you a straight recommendation. No sales pitch, no obligation. Most clients are up and moving within a week of first contact.</p>
+              <p data-i18n="faq_a6">Call or text Alex at <a href="tel:+19517019764">951-701-9764</a> — that's the fastest way. You can also email <a href="mailto:alexramirez24@gmail.com">alexramirez24@gmail.com</a> or fill out the form on this page. He'll ask a few questions about your business and budget, then give you a straight recommendation. No sales pitch, no obligation. Most clients are up and moving within a week of first contact.</p>
             </div>
           </div>
 
@@ -553,64 +565,64 @@
       <div class="container contact__inner">
 
         <div class="contact__info reveal-left">
-          <div class="section-eyebrow section-eyebrow--light">Let's Talk</div>
-          <h2 class="section-h2 section-h2--light">Ready to Get Found Online? Contact Alex Today</h2>
-          <p class="contact__sub">No agency. No runaround. You talk directly to me. Most inquiries get a response the same day.</p>
+          <div class="section-eyebrow section-eyebrow--light" data-i18n="contact_eyebrow">Let's Talk</div>
+          <h2 class="section-h2 section-h2--light" data-i18n="contact_h2">Ready to Get Found Online? Contact Alex Today</h2>
+          <p class="contact__sub" data-i18n="contact_sub">No agency. No runaround. You talk directly to me. Most inquiries get a response the same day.</p>
 
           <div class="contact__methods">
             <a href="tel:+19517019764" class="contact__method">
               <div class="contact__method-icon">📞</div>
               <div>
-                <div class="contact__method-label">Call or Text</div>
+                <div class="contact__method-label" data-i18n="contact_label_phone">Call or Text</div>
                 <div class="contact__method-val">951-701-9764</div>
               </div>
             </a>
             <a href="mailto:alexramirez24@gmail.com" class="contact__method">
               <div class="contact__method-icon">✉️</div>
               <div>
-                <div class="contact__method-label">Email</div>
+                <div class="contact__method-label" data-i18n="contact_label_email">Email</div>
                 <div class="contact__method-val">alexramirez24@gmail.com</div>
               </div>
             </a>
             <div class="contact__method">
               <div class="contact__method-icon">📍</div>
               <div>
-                <div class="contact__method-label">Location</div>
-                <div class="contact__method-val">Riverside, CA · Inland Empire</div>
+                <div class="contact__method-label" data-i18n="contact_label_loc">Location</div>
+                <div class="contact__method-val" data-i18n="contact_loc_val">Riverside, CA · Inland Empire</div>
               </div>
             </div>
           </div>
 
           <div class="contact__payments">
-            <div class="contact__payments-label">Payments accepted via Stripe</div>
+            <div class="contact__payments-label" data-i18n="contact_payments_label">Payments accepted via Stripe</div>
             <div class="contact__payment-chips">
               <span>Visa</span><span>Mastercard</span><span>Amex</span><span>Discover</span><span>JCB</span>
             </div>
-            <p class="contact__payments-note">A Stripe invoice is sent before any work begins. Payment required before work starts.</p>
+            <p class="contact__payments-note" data-i18n="contact_payments_note">A Stripe invoice is sent before any work begins. Payment required before work starts.</p>
           </div>
         </div>
 
         <div class="contact__form-wrap reveal-right">
           <div class="contact__form-card">
-            <div class="contact__form-title">Send a Message</div>
+            <div class="contact__form-title" data-i18n="contact_form_title">Send a Message</div>
             <form class="inquiry-form" id="contact-form" novalidate>
               <input type="checkbox" name="botcheck" style="display:none;" aria-hidden="true">
               <div class="form-group">
                 <label for="contact-name" class="sr-only">Your Name</label>
-                <input class="form-input" id="contact-name" type="text" name="name" placeholder="Your Name" required autocomplete="name" aria-required="true">
+                <input class="form-input" id="contact-name" type="text" name="name" placeholder="Your Name" required autocomplete="name" aria-required="true" data-i18n-placeholder="form_name">
               </div>
               <div class="form-group">
                 <label for="contact-phone" class="sr-only">Phone Number</label>
-                <input class="form-input" id="contact-phone" type="tel" name="phone" placeholder="Phone Number" required autocomplete="tel" aria-required="true">
+                <input class="form-input" id="contact-phone" type="tel" name="phone" placeholder="Phone Number" required autocomplete="tel" aria-required="true" data-i18n-placeholder="form_phone">
               </div>
               <div class="form-group">
                 <label for="contact-email" class="sr-only">Email Address</label>
-                <input class="form-input" id="contact-email" type="email" name="email" placeholder="Email Address" required autocomplete="email" aria-required="true">
+                <input class="form-input" id="contact-email" type="email" name="email" placeholder="Email Address" required autocomplete="email" aria-required="true" data-i18n-placeholder="form_email">
               </div>
               <div class="form-group">
                 <label for="contact-service" class="sr-only">Service you are interested in</label>
                 <select class="form-input form-select" id="contact-service" name="service" required aria-required="true">
-                  <option value="" disabled selected>Which service are you interested in?</option>
+                  <option value="" disabled selected data-i18n="contact_service_default">Which service are you interested in?</option>
                   <option value="Basic Website — $250/mo">Basic Website — $250/mo</option>
                   <option value="SEO Website — $1,500 + $450/mo">SEO-Optimized Website — $1,500 + $450/mo</option>
                   <option value="Google Ads Management">Google Ads Management</option>
@@ -619,9 +631,9 @@
               </div>
               <div class="form-group">
                 <label for="contact-message" class="sr-only">Tell me about your business and what you are looking for</label>
-                <textarea class="form-input form-textarea" id="contact-message" name="message" placeholder="Tell me about your business and what you're looking for" rows="4"></textarea>
+                <textarea class="form-input form-textarea" id="contact-message" name="message" placeholder="Tell me about your business and what you're looking for" rows="4" data-i18n-placeholder="form_message_contact"></textarea>
               </div>
-              <button type="submit" class="btn btn--submit">Send Message →</button>
+              <button type="submit" class="btn btn--submit" data-i18n="form_submit">Send Message →</button>
             </form>
           </div>
         </div>
@@ -636,7 +648,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <div class="footer__name">Alex Ramirez</div>
-        <div class="footer__sub">Freelance Web Designer · Riverside, CA</div>
+        <div class="footer__sub" data-i18n="footer_sub">Freelance Web Designer · Riverside, CA</div>
         <div class="footer__links">
           <a href="tel:+19517019764">951-701-9764</a>
           <span aria-hidden="true">·</span>
@@ -651,12 +663,12 @@
         <a href="#contact">Contact</a>
       </nav>
       <div class="footer__legal">
-        <a href="/privacy.html">Privacy Policy</a>
-        <a href="/terms.html">Terms of Service</a>
+        <a href="/privacy.html" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="/terms.html" data-i18n="footer_terms">Terms of Service</a>
       </div>
       <div class="footer__bottom">
-        <p>&copy; 2026 Alex Ramirez · Riverside, CA · Freelance Web Design &amp; SEO · Inland Empire</p>
-        <p class="footer__bottom-stripe">Payments processed securely by Stripe.</p>
+        <p data-i18n="footer_copyright">&copy; 2026 Alex Ramirez · Riverside, CA · Freelance Web Design &amp; SEO · Inland Empire</p>
+        <p class="footer__bottom-stripe" data-i18n="footer_stripe">Payments processed securely by Stripe.</p>
       </div>
     </div>
   </footer>
