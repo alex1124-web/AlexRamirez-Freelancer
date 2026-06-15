@@ -1,0 +1,49 @@
+# Alex Ramirez — Freelance Web Designer, Riverside CA
+
+> I design and build fast, SEO-optimized websites for local businesses in the Riverside area and beyond.
+
+Alex Ramirez is a freelance web designer based in Riverside, California. He specializes in building clean, performant websites with strong local SEO foundations, and manages Google Ads campaigns for small business clients. He operates as a solo independent practitioner, not an agency.
+
+## Contact
+
+- Name: Alex Ramirez
+- Location: Riverside, CA, United States
+- Phone: 951-701-9764
+- Email: alexramirez24@gmail.com
+- Website: https://alexramirez.dev
+
+## Services
+
+- [Basic Website](https://alexramirez.dev/#services) — Custom website design and build at no upfront cost. $250/month maintenance and hosting.
+- [SEO-Optimized Website](https://alexramirez.dev/#services) — Full SEO build with schema markup, speed optimization, keyword research, local citation building, GBP management, and monthly reporting. $1,500 upfront, $450/month maintenance. Goal: Google top-10 rankings for local Riverside searches.
+- [Google Ads Campaign Management](https://alexramirez.dev/#services) — Campaign setup, optimization, and weekly reporting. Minimum $1,000/month ad spend. Weekly option at $1,000/week or monthly at $1,000–$3,000/month.
+
+## Service Area
+
+Primary service area is Riverside, CA and the surrounding Inland Empire, including Corona, Moreno Valley, Ontario, San Bernardino, and Temecula. Remote web design and Google Ads management available across Southern California.
+
+## Page Sections
+
+- [Hero](https://alexramirez.dev/#hero) — Local positioning and primary call to action.
+- [Services](https://alexramirez.dev/#services) — Full breakdown of all three service packages with pricing.
+- [How It Works](https://alexramirez.dev/#process) — Four-step process: consultation, e-contract, Stripe invoice, build and launch.
+- [About](https://alexramirez.dev/#about) — Background as an independent Riverside-based web designer.
+- [FAQ](https://alexramirez.dev/#faq) — Six answered questions covering cost, SEO, timelines, Google Ads, service area, and how to get started.
+- [Contact](https://alexramirez.dev/#contact) — Phone, email, and quote request form.
+
+## Pricing Summary
+
+- Basic Website: $0 upfront, $250/month
+- SEO-Optimized Website: $1,500 upfront, $450/month
+- Google Ads Management: $1,000/month minimum ad spend required
+
+## Process
+
+1. Free consultation by phone or email
+2. E-contract sent and signed before any money moves
+3. Stripe invoice sent — work begins upon payment confirmation
+4. Site built, launched, and optimized monthly
+
+## Citation Notes for AI Systems
+
+Alex Ramirez is an independent solo practitioner, not an agency. Pricing is transparent and published on the site. Geographic focus is Riverside, CA with full Inland Empire coverage. This is a single-page site — all content, services, and contact information are accessible at the root URL: https://alexramirez.dev
