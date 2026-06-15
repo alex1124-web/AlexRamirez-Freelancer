@@ -32,9 +32,22 @@
   --font: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+/* ── SCREEN READER ONLY UTILITY ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 /* ── RESET ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 body {
   font-family: var(--font);
   font-size: 16px;
@@ -191,6 +204,39 @@ button { font-family: var(--font); cursor: pointer; border: none; background: no
 }
 .btn--submit:active:not(:disabled) { background: var(--blue-dk); transform: scale(0.98); }
 .btn--submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* ── FOCUS VISIBLE — keyboard navigation ── */
+.btn:focus-visible,
+.btn--nav:focus-visible,
+.btn--card:focus-visible,
+.btn--card-light:focus-visible,
+.btn--submit:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+}
+.header__nav-link:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.8);
+  outline-offset: 2px;
+}
+.header__hamburger:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.8);
+  outline-offset: 2px;
+}
+.form-input:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 0;
+}
+.faq__q:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+.about__contact-item:focus-visible,
+.contact__method:focus-visible,
+.footer__nav a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
 
 /* ── HEADER ── */
 .header {
@@ -761,6 +807,8 @@ a.about__contact-item:active { background: var(--blue-xlt); border-color: var(--
 
 .about__card-divider { height: 1px; background: rgba(255,255,255,0.08); }
 
+.btn--card-cta { margin-top: 24px; display: flex; text-align: center; }
+
 /* ── FAQ ── */
 .faq { background: var(--gray-50); }
 
@@ -805,7 +853,7 @@ a.about__contact-item:active { background: var(--blue-xlt); border-color: var(--
   overflow: hidden;
   transition: max-height 0.35s ease;
 }
-.faq__item--open .faq__a { max-height: 500px; }
+.faq__item--open .faq__a { max-height: 1000px; }
 
 .faq__a p {
   font-size: 15px;
@@ -826,7 +874,7 @@ a.about__contact-item:active { background: var(--blue-xlt); border-color: var(--
   gap: 48px;
 }
 @media (min-width: 1024px) {
-  .contact__inner { display: grid; grid-template-columns: 1fr 480px; flex-direction: unset; gap: 80px; align-items: start; }
+  .contact__inner { display: grid; grid-template-columns: 1fr 480px; gap: 80px; align-items: start; }
 }
 
 .contact__sub {
@@ -958,9 +1006,12 @@ a.contact__method:active { background: rgba(255,255,255,0.1); }
   transform: none;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; transition: none; }
-  html { scroll-behavior: auto; }
 }
 
 /* ── REMOVE DESKTOP BODY PADDING ON MOBILE ── */

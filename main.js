@@ -54,6 +54,18 @@ function initMobileMenu() {
       if (mbar) mbar.classList.remove('nav-open');
     });
   });
+
+  // Close mobile nav on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('active')) {
+      nav.classList.remove('active');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      if (mbar) mbar.classList.remove('nav-open');
+      toggle.focus();
+    }
+  });
 }
 
 /* ── Scroll Reveal ── */
@@ -85,18 +97,23 @@ function initFAQ() {
 
   items.forEach(item => {
     const btn = item.querySelector('.faq__q');
-    if (!btn) return;
+    const answer = item.querySelector('.faq__a');
+    if (!btn || !answer) return;
 
     btn.addEventListener('click', () => {
       const isOpen = item.classList.contains('faq__item--open');
       // Close all
       items.forEach(i => {
         i.classList.remove('faq__item--open');
+        const a = i.querySelector('.faq__a');
+        if (a) a.style.maxHeight = '';
         i.querySelector('.faq__q')?.setAttribute('aria-expanded', 'false');
       });
       // Toggle clicked
       if (!isOpen) {
         item.classList.add('faq__item--open');
+        // Set max-height to exact scroll height so animation is accurate regardless of content length
+        answer.style.maxHeight = answer.scrollHeight + 'px';
         btn.setAttribute('aria-expanded', 'true');
       }
     });
@@ -109,12 +126,27 @@ function initForms() {
   if (!forms.length) return;
 
   forms.forEach(form => {
+    // Per-form state: track in-flight request and pending reset timer
+    let submitting = false;
+    let resetTimer = null;
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const btn = form.querySelector('[type="submit"]');
-      const originalText = btn.textContent;
+      // Prevent double-submit while a request is already in flight
+      if (submitting) return;
 
+      const btn = form.querySelector('[type="submit"]');
+      if (!btn) return;
+
+      // Cancel any pending error-reset timer from a previous failed attempt
+      if (resetTimer !== null) {
+        clearTimeout(resetTimer);
+        resetTimer = null;
+      }
+
+      const originalText = btn.textContent;
+      submitting = true;
       btn.textContent = 'Sending…';
       btn.disabled = true;
 
@@ -144,10 +176,13 @@ function initForms() {
       } catch {
         btn.textContent = 'Error — Call 951-701-9764';
         btn.style.background = '#dc2626';
-        btn.disabled = false;
-        setTimeout(() => {
+        // Re-enable after showing the error; store timer so it can be cancelled
+        resetTimer = setTimeout(() => {
           btn.textContent = originalText;
           btn.style.background = '';
+          btn.disabled = false;
+          submitting = false;
+          resetTimer = null;
         }, 4000);
       }
     });
