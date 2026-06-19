@@ -9,7 +9,7 @@ Alex Ramirez is a freelance web designer based in Riverside, California. He spec
 - Name: Alex Ramirez
 - Location: Riverside, CA, United States
 - Phone: 951-701-9764
-- Email: alexramirez24@gmail.com
+- Email: alexramirezbiz24@gmail.com
 - Website: https://alexramirez.dev
 
 ## Services
