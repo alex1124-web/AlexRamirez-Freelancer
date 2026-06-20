@@ -329,13 +329,11 @@ function initForms() {
       // Use FormData so all fields (including message) are captured automatically
       const raw = new FormData(form);
       const data = Object.fromEntries(raw.entries());
-      const params = new URLSearchParams(data);
-
       try {
         const res = await fetch('https://alexr0520.app.n8n.cloud/webhook/quote-submission', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: params.toString(),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
         });
 
         if (res.ok) {
