@@ -1172,3 +1172,138 @@ a.contact__method:active { background: rgba(255,255,255,0.1); }
   border-top: 2px solid var(--gray-200);
   margin: 40px 0 0;
 }
+
+/* ============================================
+   Quick Quote Form Section
+   ============================================ */
+.quote-section { background: var(--gray-50); }
+
+.quote-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.quote-section__sub {
+  color: var(--gray-500);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 1rem 0 1.5rem;
+}
+
+.quote-section__perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.quote-section__perks li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.quote-section__perks svg { color: var(--blue); flex-shrink: 0; }
+
+.quote-form {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+}
+
+.quote-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.1rem;
+}
+
+.quote-form__label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.quote-form__label span { color: var(--blue); }
+
+.quote-form__input,
+.quote-form__textarea {
+  font-family: var(--font);
+  font-size: 0.95rem;
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  color: var(--dark);
+  background: var(--gray-50);
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  outline: none;
+  width: 100%;
+}
+
+.quote-form__input::placeholder,
+.quote-form__textarea::placeholder { color: var(--gray-400); }
+
+.quote-form__input:focus,
+.quote-form__textarea:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  background: var(--white);
+}
+
+.quote-form__textarea { resize: vertical; min-height: 105px; }
+
+.quote-form__btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  background: var(--blue);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 14px rgba(37,99,235,0.3);
+}
+
+.quote-form__btn:hover {
+  background: var(--blue-dk);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37,99,235,0.4);
+}
+
+.quote-form__btn:active { transform: translateY(0); }
+
+.quote-form__btn svg { transition: transform var(--transition); }
+.quote-form__btn:hover svg { transform: translateX(3px); }
+
+.quote-form__status {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  min-height: 1.2em;
+}
+
+.quote-form__status--success { color: #16a34a; }
+.quote-form__status--error   { color: #dc2626; }
+
+@media (max-width: 768px) {
+  .quote-section__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .quote-form { padding: 1.5rem; }
+}

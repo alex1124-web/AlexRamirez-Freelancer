@@ -185,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initFAQ();
   initForms();
+  initQuoteForm();
 });
 
 /* ── Header Scroll ── */
@@ -357,5 +358,54 @@ function initForms() {
         }, 4000);
       }
     });
+  });
+}
+
+/* ==========================================
+   Quick Quote Form — n8n Webhook
+   ========================================== */
+function initQuoteForm() {
+  const form = document.getElementById('quote-form');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn    = document.getElementById('quote-submit');
+    const status = document.getElementById('quote-status');
+    const orig   = btn.innerHTML;
+
+    btn.disabled = true;
+    btn.innerHTML = 'Sending… <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="animation:spin 1s linear infinite"><circle cx="12" cy="12" r="10" stroke-opacity="0.3"/><path d="M12 2a10 10 0 0 1 10 10" stroke-linecap="round"/></svg>';
+    status.textContent = '';
+    status.className = 'quote-form__status';
+
+    const data = {
+      name:    form.querySelector('[name="name"]').value,
+      email:   form.querySelector('[name="email"]').value,
+      phone:   form.querySelector('[name="phone"]').value,
+      message: form.querySelector('[name="message"]').value,
+    };
+
+    try {
+      const res = await fetch('https://alexr0520.app.n8n.cloud/webhook/quote-submission', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) throw new Error('Server error');
+
+      btn.innerHTML = '✓ Sent! I\'ll be in touch soon.';
+      btn.style.background = '#16a34a';
+      status.textContent = 'Got it — expect a reply within 24 hours.';
+      status.className = 'quote-form__status quote-form__status--success';
+      form.reset();
+    } catch {
+      btn.innerHTML = orig;
+      btn.disabled  = false;
+      status.textContent = '⚠ Something went wrong — call (951) 701-9764.';
+      status.className = 'quote-form__status quote-form__status--error';
+    }
   });
 }
