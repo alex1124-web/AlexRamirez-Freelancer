@@ -328,25 +328,21 @@ function initForms() {
       // Use FormData so all fields (including message) are captured automatically
       const raw = new FormData(form);
       const data = Object.fromEntries(raw.entries());
-      data.access_key  = WEB3FORMS_KEY;
-      data.subject     = 'New Project Inquiry — Alex Ramirez Web Design';
-      data.from_name   = 'Alex Ramirez Portfolio';
 
       try {
-        const res  = await fetch('https://api.web3forms.com/submit', {
+        const res = await fetch('https://alexr0520.app.n8n.cloud/webhook/quote-submission', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
         });
-        const json = await res.json();
 
-        if (json.success) {
+        if (res.ok) {
           btn.textContent = '✓ Message Sent!';
           btn.style.background = '#16a34a';
           form.reset();
           // Leave success state — one submission per page load is the norm for a portfolio
         } else {
-          throw new Error(json.message || 'Failed');
+          throw new Error('Server error');
         }
       } catch {
         btn.textContent = 'Error — Call 951-701-9764';
